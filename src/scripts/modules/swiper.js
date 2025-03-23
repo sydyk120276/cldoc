@@ -44,7 +44,7 @@ if (infSliders.length) {
   });
 }
 
-const reviewSlider = document.querySelector(".review-slider");
+const reviewSlider = document.querySelector(".review-clients-slider");
 
 if (reviewSlider) {
   const reviewSwiper = new Swiper(reviewSlider, {
@@ -67,7 +67,7 @@ if (reviewSlider) {
     },
   });
 
-  const tabs = document.querySelectorAll(".review-tabs button");
+  const tabs = document.querySelectorAll(".review-clients-tabs button");
 
   if (tabs) {
     const reviewCards = document.querySelectorAll(".review-card");
@@ -76,7 +76,9 @@ if (reviewSlider) {
       const target = evt.target;
       const type = target.dataset.type;
 
-      const active = document.querySelector(".review-tabs button.active");
+      const active = document.querySelector(
+        ".review-clients-tabs button.active"
+      );
 
       if (active === target) return;
 
@@ -111,38 +113,24 @@ const sliders = document.querySelectorAll(".main-slider");
 if (sliders) {
   sliders.forEach((slider) => {
     new Swiper(slider, {
-      slidesPerView: 1,
-      breakpoints: {
-        543: {
-          slidesPerView: 2,
-        },
-        767: {
-          slidesPerView: 3,
-        },
-        1200: {
-          slidesPerView: 4,
-        },
-        1400: {
-          slidesPerView: 5,
-        },
-
-        1640: {
-          slidesPerView: 6,
-        },
-      },
+      slidesPerView: "auto",
       autoHeight: true,
       spaceBetween: 30,
-      // modules: [Autoplay],
-      // autoplay: {
-      //   enabled: true, // Включает автопрокрутку
-      //   delay: 300, // Нет задержки между сменой слайдов
-      // },
-      speed: 2000,
       pagination: {
         el: ".swiper-pagination",
         dynamicBullets: true,
         clickable: true,
       },
+    });
+  });
+}
+
+const tabsSliders = document.querySelectorAll(".review-clients-tabs-slider");
+
+if (tabsSliders) {
+  tabsSliders.forEach((slider) => {
+    new Swiper(slider, {
+      slidesPerView: "auto",
     });
   });
 }
