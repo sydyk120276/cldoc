@@ -1,0 +1,62 @@
+.prices {
+	&__accordeon {
+		.table-wrapper {
+			overflow: hidden;
+			width: 100%;
+			overflow-x: auto;
+			margin-bottom: 20px;
+			padding-bottom: 10px;
+
+			&::-webkit-scrollbar {
+				height: 6px;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				border-radius: 8px;
+			}
+
+			&::-webkit-scrollbar-track {
+				background-color: var(--main-bg-color);
+			}
+		}
+
+		small {
+			display: inline-block;
+			margin-bottom: 10px;
+		}
+
+		table {
+			width: 100%;
+			min-width: 720px;
+
+			tr {
+				width: 100%;
+
+				&:nth-child(odd) {
+					background-color: var(--light);
+				}
+
+				&:first-child td {
+					font-weight: 700;
+				}
+
+				&:first-child td:not(:first-child) {
+					text-align: center;
+				}
+			}
+
+			td {
+				padding: 10px;
+				text-align: center;
+				font-size: 14px;
+				font-weight: 600;
+				min-width: 240px;
+				color: var(--dark);
+
+				&:first-child {
+					text-align: left;
+				}
+			}
+		}
+	}
+}

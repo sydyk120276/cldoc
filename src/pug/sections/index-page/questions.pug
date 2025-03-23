@@ -1,0 +1,9 @@
+include ../../mixins/section-header
+include ../../components/main-accordeon
+include ../../content/question-list
+
+section.questions
+  .container.questions__container
+    +section-header({title: "Часто задаваемые вопросы"})
+
+    +main-accordeon(questionList)

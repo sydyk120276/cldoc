@@ -1,0 +1,30 @@
+.burger {
+  position: relative;
+  display: none;
+
+  @extend .button-default;
+  @extend .flex-centered-content;
+  flex-direction: column;
+
+  width: 40px;
+  height: 40px;
+
+  cursor: pointer;
+
+  z-index: 1001;
+  @include m-b-desktop-down {
+    display: flex;
+  }
+
+  &__line {
+    height: 2px;
+    width: 100%;
+    margin: 5px 0;
+
+    background-color: var(--gray);
+
+    &--bottom {
+      width: 75%;
+    }
+  }
+}

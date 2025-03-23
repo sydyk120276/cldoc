@@ -1,0 +1,137 @@
+.map-modal {
+  max-width: 1920px;
+  max-height: 960px;
+  padding: 20px 0;
+  background-color: rgba(245,245,245,.9);
+
+  &-controls {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+
+    @extend .flex-column;
+  }
+
+  &-logo {
+    position: absolute;
+    top: 30px;
+    left: 35px;
+  }
+
+  &-tooltip {
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    visibility: hidden;
+    opacity: 0;
+
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &-chooser {
+    @extend .flex-centered-content;
+    flex-direction: column;
+    z-index: 102;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    outline: 1px solid red;
+    //transform: translate(-50%, -50%);
+
+    visibility: hidden;
+    opacity: 0;
+
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+    //max-width: 220px;
+
+    border-radius: 4px;
+    padding: 15px;
+
+    background-color: rgba(245,245,245,.7);
+
+    span {
+      display: inline-block;
+      margin-bottom: 15px;
+      font-size: 24px;
+
+      color: var(--dark);
+    }
+
+    a {
+      font-size: 18px;
+      color: var(--accent);
+    }
+
+    .chooser-closer {
+      @extend .button-default;
+      @extend .flex-centered-content;
+
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &-zoom {
+    @extend .button-default;
+    @extend .flex-centered-content;
+    width: 40px;
+    height: 40px;
+
+    background-color: rgba(245,245,245,.7);
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    &--in,
+    &--out {
+      position: relative;
+      &::before,
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 1px;
+
+        content: '';
+        background-color: var(--text);
+      }
+
+      &::before {
+        width: 2px;
+        height: 24px;
+      }
+
+      &::after {
+        width: 24px;
+        height: 2px;
+      }
+
+      @extend .hover-opacity;
+    }
+
+    &--out {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .svg-map {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,15 @@
+mixin info-card(data)
+
+  #{data.tag ? data.tag : 'div'}(href= data.tag == 'a' ? '#' : null class= data.cls ? data.cls : null).info-card
+    if data.num
+      span(aria-hidden="true").info-card__num!= data.num
+    .info-card__header
+      if data.icon
+        img(src="./assets/img/icon-services.svg" alt="" width="40" height="")
+      span.info-card-title!= data.title
+    .content-block!= data.content
+
+    if data.small
+      small!= data.small
+
+

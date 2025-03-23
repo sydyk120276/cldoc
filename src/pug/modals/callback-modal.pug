@@ -1,0 +1,26 @@
+.modal.callback-modal#callback
+  .modal__overlay
+    .modal__content     
+      include ./modal-components/modal-closer
+      .callback-modal__header
+        span.callback-modal__title Оставить заявку
+        p.callback-modal__desc Заполните необходимые поля формы и мы обязательно свяжемся c Вами!
+      
+      form(action="#").callback
+        .callback-modal__content.callback__content
+          fieldset.callback__content-part
+            .callback__content-part-field
+              input(type="text" id="user_name" name="Имя" placeholder="Ваше имя" data-required="true")
+
+            .callback__content-part-field
+              input(type="tel" id="user_phone" name="Телефон" placeholder="Телефон" data-required="true")
+
+            .callback__content-part-field
+              input(type="text" id="user_mail" placeholder="E-mail" name="Электронная почта")
+              
+            .callback__content-part-field
+              textarea(id="user_message" name="Сообщение" placeholder="Сообщение...")
+
+        .callback-modal__footer.callback__footer
+            button(type="submit").main-btn.callback-modal__btn.callback-modal__btn--submit Отправить
+            span.form-undertext * Отправляя форму Вы автоматически соглашаетесь с условиями на обработку персональных данных.

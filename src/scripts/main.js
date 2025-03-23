@@ -1,0 +1,13 @@
+import "./modules/nav";
+import "./modules/swiper";
+import "./modules/imask";
+import "./modules/modal";
+import "./modules/collapsed-text";
+import "./modules/search";
+import "./modules/add-file-control";
+import "./modules/quiz/quiz";
+import "./modules/quiz/translate-control";
+import "./modules/form/form-submit";
+import "./utils/limitStr";
+import "./utils/custom-select";
+import "./utils/main-accordeon";

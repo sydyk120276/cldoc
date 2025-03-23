@@ -1,0 +1,5 @@
+.client {
+  @extend .section-inner-offset;
+  @extend .section-bottom-offset;
+  margin-bottom: 0;
+}

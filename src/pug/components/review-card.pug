@@ -1,0 +1,29 @@
+mixin review-card(review)
+  .review-card(data-type= review.type ? review.type : null)
+    .review-card__header
+      if review.icon
+        img(src=`./assets/img/${review.img.name}` alt= review.img.alt width="40" height="40")
+      .review-card__header-content
+        if review.name
+          span.review-card__user-name!= review.name
+        .review-card__header-content-footer
+          if review.date
+            span!= review.date
+          if review.link
+              a(href= review.link)!= review.linkText
+
+    .review-card__ratings
+      .review-card__ratings-item
+        img(src='./assets/img/icon-star.svg' alt="rating" width="20" height="20")
+      .review-card__ratings-item
+        img(src='./assets/img/icon-star.svg' alt="rating" width="20" height="20")
+      .review-card__ratings-item
+        img(src='./assets/img/icon-star.svg' alt="rating" width="20" height="20")
+      .review-card__ratings-item
+        img(src='./assets/img/icon-star.svg' alt="rating" width="20" height="20")
+      .review-card__ratings-item
+        img(src='./assets/img/icon-star.svg' alt="rating" width="20" height="20")
+
+    if review.text
+      .review-card__text(data-collapsed-text="140" data-expanded-text!=review.text data-link=review.link data-linktext=review.linkText data-name=review.name data-date=review.date data-collapsed-btn-text="Смотреть весь отзыв")!= review.text
+

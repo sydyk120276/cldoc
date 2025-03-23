@@ -1,0 +1,12 @@
+include ../../mixins/section-header
+
+section.review_2.slider-section
+  .container
+    +section-header({title: 'Отзывы'}, true)
+
+    .swiper.main-slider
+      .swiper-wrapper
+        each item in [1,2,3,4,1,2,3]
+          .swiper-slide
+            img(src=`./assets/img/review_${item}.png` alt="")
+      .swiper-pagination      

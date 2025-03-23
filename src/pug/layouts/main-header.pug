@@ -1,0 +1,36 @@
+include ../mixins/main-btn
+include ../mixins/logo
+
+header.header
+  .container.header__container
+    +logo('header__logo')
+
+    .header__nav
+      include ../components/nav
+
+    .header__contacts
+      a(href="tel:+74997072130") +7 (499) 707-21-30
+      a(href="tel:+74959600253") +7 (495) 960-02-53
+
+    .header__action
+      +main-btn({
+        title: 'Оставить заявку',
+        cls: 'header__action-request-btn',
+        id: 'quiz'
+      })
+
+      .header__action-search
+        button(aria-label="Открыть поиск").search-opener
+          svg(width="18" height="18")
+            use(xlink:href="./assets/sprite.svg#icon-search")
+
+    .search
+      .container.search-container
+        input(type="text").search-field
+
+        button(aria-label="Закрыть поиск").search-closer
+          img(src="./assets/img/icon-close.svg" alt="Закрыть" width="24" height="24")
+
+    .header__burger
+      include ../components/burger
+

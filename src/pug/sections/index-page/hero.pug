@@ -1,0 +1,61 @@
+include ../../mixins/logo
+section.hero
+  .container-fluid
+    .top-banner
+      .swiper
+        .swiper-wrapper
+          .swiper-slide
+            .swiper-slide__content
+              +logo('hero__logo')
+              h1.main-title Центр легализации документов
+              span.main-text Ваш надежный партнер в легализации документов для международного использования!
+              a(href="#").main-link  Подробнее
+          .swiper-slide
+            .swiper-slide__content
+              +logo('hero__logo')
+              h2.main-title Title
+              span.main-text Ваш надежный партнер в легализации документов для международного использования!
+              a(href="#").main-link  Подробнее
+        .swiper-pagination
+
+    //- .hero__content-wrapper
+      .hero__content.hero__content--side
+
+        svg(width="50" height="50")
+          use(xlink:href="./assets/sprite.svg#icon-stamp")
+
+        span.hero__content-subtitle Апостиль
+
+        ul
+          li
+            a(href="#") Апостиль на нотариальные документы
+          li
+            a(href="#") Апостиль на документы органов ЗАГС
+          li
+            a(href="#") Апостиль на справки о несудимости
+          li
+            a(href="#") Апостиль на дипломы, аттестаты
+
+        a(href="#").main-link Подробнее
+
+      .hero__content.hero__content--middle
+        h1.visually-hidden Центр легализации - многопрофильное бюро переводов в Москве.
+        p.hero__content-title <span>Легализация документов&nbsp;-</span><br/> это действие, направленное на придание законности документу на территории другого государства. Существует два типа легализации документов: консульская и упрощенная форма – апостиль.
+
+        +logo('hero__logo')
+
+        span.hero__content-text В случае если страна назначения является участником Гаагской конвенции, проведенной 5 октября 1961 года, консульская легализация документов не требуется, — достаточно проставления штампа «Апостиль».
+
+      .hero__content.hero__content--side
+        svg(width="50" height="50")
+          use(xlink:href="./assets/sprite.svg#icon-envelope")
+
+        span.hero__content-subtitle Консульская легализация
+
+        ul
+          li
+            a(href="#") Легализация личных документов граждан
+          li
+            a(href="#") Легализация документов компаний, в т.ч. касающихся внешнеэкономической деятельности
+
+        a(href="#").main-link  Подробнее

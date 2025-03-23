@@ -1,0 +1,8 @@
+mixin main-accordeon(data)
+  if data
+    .accordeon
+      each item in data
+        .accordeon__item
+          .accordeon__item-header!= item.question
+          .accordeon__item-content!= item.answer
+

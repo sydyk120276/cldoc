@@ -1,0 +1,22 @@
+include ../../mixins/section-header
+include ../../mixins/main-btn
+
+section.request
+  .container.request__container
+    .request__header
+      span.request__title Заказать обратный звонок
+      p.request__desc Оставьте свои контакты и мы обязательно свяжемся с Вами!
+    form(action="#")
+
+      input(type="text" placeholder="Ваше имя" data-required="true")
+      input(type="tel" placeholder="Телефон" data-required="true")
+      input(type="text" placeholder="E-mail")
+
+      span.form-undertext * Отправляя форму Вы автоматически соглашаетесь с условиями на обработку персональных данных.
+      +main-btn({
+        title: 'Отправить',
+        cls: 'request__submit',
+        type: 'submit'
+      })
+
+

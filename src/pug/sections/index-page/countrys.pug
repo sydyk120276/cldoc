@@ -1,0 +1,17 @@
+include ../../content/countrys-list
+
+section.countrys
+  .container.documents__container(id="container" class="container")
+    .countrys-wrapper
+      .section-header
+        span.countrys__title Популярные страны для легализации
+      ul.countrys__content.base-section-list--3cols
+        each item in countrysList
+          li
+            if item.img
+              img(src=`./assets/img/${item.img.name}` alt= item.img.alt width="60" height="60")
+            if item.title 
+              span!= item.title
+
+
+

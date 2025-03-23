@@ -1,0 +1,37 @@
+.features {
+  @extend .section-inner-offset;
+
+  .info-card {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 200px;
+      height: 200px;
+      background-image: url("../assets/img/features.svg");
+      background-position: center;
+      background-size: 100px 100px;
+      background-position: right 20px bottom 20px;
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__container {
+    @extend .flex-column;
+    align-items: center;
+    max-width: 1440px;
+  }
+
+  &__text {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 24px;
+    color: var(--text);
+  }
+
+  &__list {
+    @extend .base-section-list;
+  }
+}

@@ -1,0 +1,16 @@
+include ../mixins/logo
+
+footer.footer
+  .container.footer__grid
+    .footer__grid-item.footer__grid-item--logo
+      +logo('footer__logo')
+      span Все права защищены © 2023
+
+    .footer__grid-item.footer__grid-item--nav
+      include ../components/nav
+      include ../components/social
+    .footer__grid-item.footer__grid-item--law
+      include ../components/company-law-info
+    .footer__grid-item.footer__grid-item--developer
+      include ../components/developer-info
+

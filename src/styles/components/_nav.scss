@@ -1,0 +1,35 @@
+.nav {
+  display: flex;
+
+  @include m-b-desktop-up {
+    opacity: 1 !important;
+    display: flex !important;
+  }
+
+  &__list {
+    @extend .flex-wrap;
+    margin: 0 auto;
+  }
+
+  &__list-item {
+    margin: 0 15px;
+
+    @include m-b-desktop-md-down {
+      margin: 0 10px;
+    }
+
+    a {
+      border-bottom: 1px solid transparent;
+      transition: border-color var(--main-transition), color var(--main-transition);
+
+      &.active {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      &:hover {
+        color: var(--accent);
+      }
+    }
+  }
+}

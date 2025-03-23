@@ -1,0 +1,12 @@
+include ../../mixins/section-header
+include ../../components/info-card
+include ../../content/workflow-list
+
+section.workflow
+  .container.workflow__container(id="container" class="container")
+    +section-header({title: "Как мы работаем"})
+
+    ul.workflow__list.base-section-list--2cols
+      each item in workflowList
+        li
+          +info-card(item)

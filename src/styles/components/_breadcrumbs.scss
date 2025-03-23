@@ -1,0 +1,30 @@
+.breadcrumbs {
+  padding: 30px 0;
+
+  &__list {
+    @extend .flex-wrap;
+  }
+
+  &__list-item {
+
+    a,
+    & > span {
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    a {
+      position: relative;
+
+      &::after {
+        position: relative;
+        top: 0;
+        right: 0;
+        content: " - ";
+        padding-right: 5px;
+      }
+
+      @extend .hover-opacity;
+    }
+  }
+}

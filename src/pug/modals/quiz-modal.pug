@@ -1,0 +1,80 @@
+.modal.quiz-modal#quiz
+  .modal__overlay
+    .modal__content
+      include ./modal-components/modal-closer
+
+      .quiz-modal__header
+        span.quiz-modal__title Оставить заявку
+        p.quiz-modal__desc Заполните необходимые поля формы и мы обязательно свяжемся c Вами!
+
+      form(action="#").quiz
+        .quiz-modal__content.quiz__content
+          fieldset.quiz__content-part.active
+            .quiz__content-part-field
+              input(type="text" id="user_name" name="Имя" placeholder="Ваше имя" data-required="true")
+
+            .quiz__content-part-field
+              input(type="tel" id="user_phone" name="Телефон" placeholder="Телефон" data-required="true")
+
+            .quiz__content-part-field
+              input(type="text" id="user_mail" placeholder="E-mail" name="Электронная почта")
+
+          fieldset.quiz__content-part
+            .quiz__content-part-field
+              input(type="text" id="country" name="Страна, для которой легализуются документы" placeholder="Страна, для которой легализуются документы")
+
+            .quiz__content-part-field
+              input(type="text" id="doc_type" name="Вид документа" placeholder="Вид документа*" data-required="true")
+              small Например: диплом, свидетельство о рождении, договор, устав и т. д.
+
+            .quiz__content-part-field.quiz__content-part-field--radio
+              span Вид легализации документов:
+              .radio-control
+                input(type="radio" name="Вид легализации документов" id="legalization" value="Консульская легализация" checked)
+                label(for="legalization") Консульская легализация
+              .radio-control
+                input(type="radio" name="Вид легализации документов" id="apostille" value="Апостиль")
+                label(for="apostille") Апостиль
+
+            .quiz__content-part-field.quiz__content-part-field--radio
+              span Легализуются оригиналы или копии документов:
+              .radio-control
+                input(type="radio" name="Легализуются оригиналы или копии документов" id="original" value="Оригинал" checked)
+                label(for="original") Оригинал
+              .radio-control
+                input(type="radio" name="Легализуются оригиналы или копии документов" id="copy" value="Копия")
+                label(for="copy") Копия
+
+          fieldset.quiz__content-part
+            .quiz__content-part-field.quiz__content-part-field--radio
+              span Требуется ли перевод?
+              .radio-control
+                input(type="radio" name="Требуется ли перевод" id="translate_required" value="Да")
+                label(for="translate_required") Да
+              .radio-control
+                input(type="radio" name="Требуется ли перевод" id="translate_not_required" value="Нет" checked)
+                label(for="translate_not_required") Нет
+
+            .quiz__content-part-field.quiz__content-part-field--lang
+              input(type="text" placeholder="Язык перевода")
+
+            .quiz__content-part-field
+              <div class="main-input-file-container">
+                <input type="file" name="user_file" id="user_translate_files">
+
+                <label for="user_translate_files" tabindex="0">
+                  <svg width="16" height="16" viewBox="0 0 16 17" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.63178 6.31821C1.75327 5.4397 1.75327 4.01044 2.63178 3.13194C3.05748 2.70624 3.62332 2.47199 4.2251 2.47199C4.82689 2.47199 5.39273 2.70625 5.8183 3.13194L8.41987 5.73325C8.60622 5.91923 8.85375 6.02188 9.1171 6.02188C9.38045 6.02188 9.62797 5.91923 9.81433 5.73325C10.0007 5.54703 10.1033 5.29937 10.1033 5.03603C10.1033 4.77266 10.0007 4.52503 9.81433 4.33855L7.21276 1.73758C6.41486 0.939554 5.35383 0.5 4.2251 0.5C3.09612 0.5 2.03522 0.939554 1.23771 1.73758C0.439554 2.5351 0 3.59612 0 4.72498C0 5.85371 0.439554 6.91473 1.23758 7.71237L3.83877 10.3137C4.02512 10.5003 4.27275 10.6028 4.536 10.6028C4.79924 10.6028 5.04662 10.5002 5.2331 10.3138C5.41945 10.1276 5.52209 9.88019 5.52209 9.61659C5.52209 9.35299 5.41945 9.10559 5.23334 8.91949L2.63178 6.31821ZM5.11547 4.62957C4.8521 4.62957 4.60446 4.73221 4.41824 4.91832C4.23201 5.10454 4.12949 5.3522 4.12949 5.61554C4.12949 5.87891 4.23214 6.12654 4.41824 6.31302L10.1869 12.0814C10.3732 12.2676 10.6208 12.3701 10.8842 12.3701C11.1475 12.3701 11.3952 12.2675 11.5814 12.0814C11.9661 11.6967 11.9661 11.0712 11.5814 10.6866L5.81269 4.91819C5.62634 4.73209 5.37881 4.62969 5.11547 4.62969V4.62957ZM14.7624 9.28725L12.1608 6.68581C11.9745 6.49958 11.7268 6.39718 11.4636 6.39718C11.2004 6.39718 10.953 6.49983 10.7665 6.68581C10.5801 6.87178 10.4777 7.11943 10.4777 7.38303C10.4777 7.6464 10.5801 7.89404 10.7665 8.08026L13.3681 10.6815C14.2462 11.56 14.2462 12.9892 13.3681 13.8677C12.9422 14.2934 12.3761 14.5281 11.7747 14.5281C11.173 14.5281 10.6072 14.2938 10.1813 13.8678L7.5801 11.2662C7.39388 11.0802 7.14647 10.9779 6.88326 10.9779C6.62014 10.9779 6.37263 11.0802 6.18616 11.2664C5.99981 11.4526 5.89716 11.7003 5.89716 11.9639C5.89716 12.2271 5.99981 12.4749 6.18616 12.6614L8.78735 15.2625C9.58449 16.0604 10.6455 16.5 11.7746 16.5C12.9037 16.5 13.9649 16.0604 14.7624 15.2625C16.4096 13.6149 16.4096 10.9345 14.7624 9.2875V9.28725Z"/>
+                  </svg>
+                  <span>Прикрепить документ</span>
+                </label>
+
+                <button type="button" class="main-input-file-remove-btn disabled">Удалить</button>
+              </div>
+
+        .quiz-modal__footer.quiz__footer
+          .quiz__footer-container
+            button(type="button").main-btn.quiz__btn.quiz__btn--prev.disabled Назад
+            button(type="button").main-btn.quiz__btn.quiz__btn--next Далее
+            button(type="submit").main-btn.quiz__btn.quiz__btn--submit.disabled Отправить
+            span.form-undertext * Отправляя форму Вы автоматически соглашаетесь с условиями на обработку персональных данных.

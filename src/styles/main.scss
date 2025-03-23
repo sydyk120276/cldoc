@@ -1,0 +1,59 @@
+/* Базовые подключения */
+@import "vendor";
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "global";
+@import "extends";
+@import "common";
+
+/* Компоненты */
+@import "./components/loader";
+@import "./components/quiz";
+@import "./components/swiper";
+@import "./components/header";
+@import "./components/search";
+@import "./components/breadcrumbs";
+@import "./components/logo";
+@import "./components/nav";
+@import "./components/burger";
+@import "./components/slider-section";
+@import "./components/svg-map";
+@import "./components/info-card";
+@import "./components/review-card";
+@import "./components/social";
+@import "./components/section-tabs";
+@import "./components/contact-card";
+@import "./components/main-accordeon";
+@import "./components/custom-select";
+@import "./components/accordeon";
+@import "./components/developer";
+@import "./components/footer";
+
+/* Секции */
+@import "./sections/index-page/hero";
+@import "./sections/index-page/about";
+@import "./sections/index-page/services";
+@import "./sections/index-page/client";
+@import "./sections/index-page/review";
+@import "./sections/index-page/review_2";
+@import "./sections/index-page/payments";
+@import "./sections/index-page/features";
+@import "./sections/index-page/documents";
+@import "./sections/index-page/info";
+@import "./sections/index-page/questions";
+@import "./sections/index-page/countrys";
+@import "./sections/index-page/workflow";
+@import "./sections/index-page/request";
+@import "./sections/prices-page/prices";
+@import "./sections/common/content-block";
+
+/*modals*/
+@import "./modals/common";
+@import "./modals/map-modal";
+@import "./modals/quiz-modal";
+@import "./modals/status-modal";
+@import "./modals/expanded-text-modal";
+@import "./modals/callback-form";
+
+/*mixins*/

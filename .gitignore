@@ -1,0 +1,16 @@
+/node_modules
+package-lock.json
+gsap-bonus.tgz
+/build
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.tgz

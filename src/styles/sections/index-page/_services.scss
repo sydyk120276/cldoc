@@ -1,0 +1,20 @@
+.services {
+  @extend .section-inner-offset;
+
+  &__container {
+    @extend .flex-column;
+    align-items: center;
+    max-width: 1440px;
+  }
+
+  &__text {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 24px;
+    color: var(--text);
+  }
+
+  &__list {
+    @extend .base-section-list;
+  }
+}

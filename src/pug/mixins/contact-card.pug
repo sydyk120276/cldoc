@@ -1,0 +1,35 @@
+mixin contact-card(data)
+  .contact
+    span.inner-section-accent-title!= data.title
+
+    p.contact__desc!= data.desc
+
+    .contact__grid
+      .contact__grid-side
+        address.contact__field
+          span.contact__field-title Наш адрес:
+          span!= data.address
+
+        div.contact__field
+          span.contact__field-title Как к нам пройти:
+          span!= data.note
+
+        div.contact__field
+          span.contact__field-title Режим работы:
+          span!= data.time
+
+        div.contact__field
+          span.contact__field-title Телефоны:
+          each phone in data.phones
+            != phone
+
+        div.contact__field
+          span.contact__field-title E-mail:
+          span!= data.email
+
+        div.contact__field
+          span.contact__field-title Режим работы:
+          span!= data.time
+
+      .contact__grid-side
+        .map!= data.map

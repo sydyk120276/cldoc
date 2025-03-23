@@ -1,0 +1,12 @@
+include ../../mixins/section-header
+include ../../components/info-card
+include ../../content/payments-list
+
+section.payments
+  .container.payments__container(id="container" class="container")
+    +section-header({title: "Способы оплаты"})
+
+    ul.base-section-list.base-section-list--4cols
+      each item in paymentsList
+        li
+          +info-card(item)

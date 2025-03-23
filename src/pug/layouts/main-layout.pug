@@ -1,0 +1,31 @@
+include ./head
+
+doctype html
+
+block variables
+  -
+    const title = ""
+    const desc = ""
+    const keywords = ""
+
+html(lang="ru")
+  +head(title, desc, keywords)
+
+  body
+    include ../components/loader
+    include ./main-header
+
+    main
+      block content
+
+    include ./main-footer
+    include ../modals/quiz-modal
+    include ../modals/success-modal
+    include ../modals/error-modal
+    include ../modals/callback-modal
+    include ../modals/expanded-text-modal
+
+    block modals
+
+    block scripts
+      //script(src="./js/bundle.js")

@@ -1,0 +1,36 @@
+include ../../mixins/section-header
+include ../../mixins/main-btn
+include ../../mixins/custom-select
+
+section.info
+  .container
+    // info__content
+
+    .info-wrapper
+      .info__header
+        h2.info__title Легализация или Апостиль? <br> Узнайте за секунду!
+        p.info__text Выберите страну, и мы подскажем, какая услуга вам нужна. Всё просто и быстро!
+        //.info__content-form
+      .info__content
+        +custom-select({
+          id: 'country_type',
+          options: [
+            { value: '', name: 'Выберите страну', isSelected: true},
+            { value: 'russia', name: 'Россия'},
+            { value: 'usa', name: 'США'},
+            { value: 'germany', name: 'Германия'},
+            { value: 'france', name: 'Франция'},
+            { value: 'france', name: 'Франция'},
+            { value: 'france', name: 'Франция'},
+            { value: 'france', name: 'Франция'},
+            { value: 'france', name: 'Франция'},
+          ]
+        })
+        +main-btn({
+          id: 'callback',
+          type: "submit",
+          title: 'Узнать какая услуга нужна',
+        })
+
+
+

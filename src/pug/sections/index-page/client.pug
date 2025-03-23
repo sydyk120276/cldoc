@@ -1,0 +1,114 @@
+include ../../mixins/section-header
+
+-
+  const clientList = [
+    {
+      name: 'РИА НОВОСТИ',
+      icon: {
+        name: 'ria',
+        width: '233',
+        height: '60'
+      }
+    },
+    {
+      name: 'ПРИВОД',
+      icon: {
+        name: 'privod',
+        width: '150',
+        height: '64'
+      }
+    },
+    {
+      name: 'Danfoss',
+      icon: {
+        name: 'danfoss',
+        width: '164',
+        height: '60'
+      }
+    },
+    {
+      name: 'ENHEL beaty',
+      icon: {
+        name: 'enhel',
+        width: '132',
+        height: '60'
+      }
+    },
+    {
+      name: 'ПСГ',
+      icon: {
+        name: 'psg',
+        width: '101',
+        height: '60'
+      }
+    },
+    {
+      name: 'Samsung',
+      icon: {
+        name: 'samsung',
+        width: '160',
+        height: '60'
+      }
+    },
+    {
+      name: 'ТКЦ Центрум',
+      icon: {
+        name: 'tkc',
+        width: '104',
+        height: '60'
+      }
+    },
+    {
+      name: 'РОССИЯ СЕГОДНЯ',
+      icon: {
+        name: 'rt',
+        width: '225',
+        height: '60'
+      }
+    },
+    {
+      name: 'KIA',
+      icon: {
+        name: 'kia',
+        width: '134',
+        height: '30'
+      }
+    },
+    {
+      name: 'ABB',
+      icon: {
+        name: 'abb',
+        width: '100',
+        height: '40'
+      }
+    },
+    {
+      name: 'Parmalat',
+      icon: {
+        name: 'parmalat',
+        width: '127',
+        height: '60'
+      }
+    },
+    {
+      name: 'OPKK',
+      icon: {
+        name: 'opkk',
+        width: '171',
+        height: '60'
+      }
+    },
+  ]
+
+section.slider-section.client
+  .container-fluid
+    +section-header({title: "Наши клиенты"}, true)
+
+    .infinity-slider
+      .swiper-wrapper
+        each client in clientList
+          .swiper-slide
+            svg(width= client.icon.width height= client.icon.height aria-label= client.name)
+              use(xlink:href=`./assets/sprite.svg#icon-client-${client.icon.name}`)
+      .swiper-pagination
+

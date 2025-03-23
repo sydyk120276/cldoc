@@ -1,0 +1,11 @@
+include ../../mixins/section-header
+include ../../components/info-card
+include ../../content/services-list
+
+section.services
+  .container.services__container(id="container" class="container")
+    +section-header({title: "Наши услуги", text: "Центр легализации документов — это ваш надежный партнер в подтверждении юридической силы официальных документов за рубежом. "})
+
+    .base-section-list.base-section-list--3cols
+      each item in serviceList
+          +info-card(item)

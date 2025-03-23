@@ -1,0 +1,61 @@
+.workflow {
+  @extend .section-inner-offset;
+
+  .info-card {
+    position: relative;
+
+    &__num {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      content: "";
+      width: 90px;
+      height: 120px;
+      font-size: 160px;
+      line-height: 100px;
+      font-weight: 700;
+      color: var(--accent);
+      opacity: 0.2;
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 3fr 6fr;
+    gap: 20px;
+    max-width: 1440px;
+
+    @include m-b-down(1200px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .section-title {
+    padding: 0;
+    text-align: start;
+    @include m-b-down(1200px) {
+      text-align: center;
+    }
+  }
+
+  .section-header {
+    span {
+      text-align: start;
+
+      @include m-b-down(1200px) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__text {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 24px;
+    color: var(--text);
+  }
+
+  &__list {
+    @extend .base-section-list;
+  }
+}

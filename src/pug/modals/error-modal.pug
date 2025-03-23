@@ -1,0 +1,14 @@
+include ../mixins/logo
+
+.modal.status-modal.error-modal#error-modal
+  .modal__overlay
+    .modal__content
+      .modal__header
+        include ./modal-components/modal-closer
+
+        +logo('map-modal-logo')
+
+      .modal__body
+        span.status-modal__title К сожалению, что то пошло не так..
+        span.status-modal__desc Попробуйте снова или свяжитесь с нами любым удобным для Вас способом из раздела <a href="#">контакты</a>
+

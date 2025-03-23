@@ -1,0 +1,64 @@
+.info-card {
+	@extend .flex-column;
+	padding: clamp(24px, 4vw, 30px) clamp(18px, 3vw, 24px);
+	gap: 16px;
+	height: 100%;
+	border: 1px solid var(--light);
+	border-radius: 5px;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	&-title {
+		position: relative;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 1;
+		padding-bottom: 6px;
+		color: var(--dark);
+
+		&::before {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			content: "";
+			width: 100px;
+			height: 2px;
+			background-color: var(--accent);
+		}
+	}
+
+	&-text {
+		font-weight: 400;
+		font-size: 16px;
+		color: var(--text);
+	}
+
+	small {
+		font-weight: 400;
+		font-size: 16px;
+		color: var(--accent);
+		margin-top: auto;
+	}
+
+	svg {
+		fill: var(--accent);
+		height: 100%;
+		width: 100%;
+		max-width: 40px;
+		max-height: 40px;
+		aspect-ratio: 1 / 1;
+	}
+
+	.content-block ul {
+		margin-bottom: 0;
+
+		& li {
+			margin-bottom: 5px;
+			color: var(--dark);
+		}
+	}
+}

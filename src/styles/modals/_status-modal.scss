@@ -1,0 +1,46 @@
+.status-modal {
+  @extend .flex-column;
+
+  .modal__content {
+    min-height: 250px;
+    padding: 25px;
+  }
+
+  .modal__body {
+    margin-top: auto;
+    padding-top: 60px;
+  }
+
+  .modal-closer {
+    top: 20px;
+    right: 20px;
+  }
+
+  .logo {
+    top: 10px;
+    left: 15px;
+  }
+
+  &__content {
+    @extend .flex-column;
+    flex-grow: 1;
+    padding: 80px 0 40px;
+  }
+
+  &__title {
+    font-size: 26px;
+    color: var(--accent);
+    margin-bottom: 30px;
+  }
+
+  &__desc {
+    font-size: 18px;
+
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+
+      @extend .hover-opacity;
+    }
+  }
+}

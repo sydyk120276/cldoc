@@ -1,0 +1,114 @@
+.countrys {
+  @extend .section-inner-offset;
+
+  &__container {
+    @extend .flex-column;
+    align-items: center;
+    max-width: 1440px;
+  }
+
+  .section-text {
+    text-align: start;
+  }
+
+  .countrys-wrapper {
+    position: relative;
+    width: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-image: url(../assets/img/decor_map.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      width: 80vw;
+      height: 80vh;
+
+      z-index: -1;
+
+      @include m-b-down(543px) {
+        content: none;
+      }
+    }
+  }
+
+  .section-header {
+    align-items: flex-start;
+    margin-bottom: 60px;
+
+    span {
+      padding: 5px 0;
+    }
+
+    @include m-b-mobile-lg-down {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    text-align: start;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--dark);
+
+    @include m-b-mobile-lg-down {
+      text-align: center;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: -ms-grid;
+    display: flex;
+    width: 100%;
+    max-width: -webkit-fit-content;
+    max-width: -moz-fit-content;
+    max-width: 960px;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  li {
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 16px;
+    width: calc(100% / 3 - 20px);
+    flex-direction: column;
+    border: 1px solid gray;
+    padding: clamp(16px, 4vw, 30px) clamp(16px, 4vw, 20px);
+    border-radius: 10px;
+    border: 1px solid var(--light);
+    border-radius: 5px;
+    background-color: var(--main-bg-color);
+
+    @include m-b-down(960px) {
+      width: calc(50% - 15px);
+    }
+    @include m-b-down(543px) {
+      width: 100%;
+    }
+
+    span {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1;
+      color: var(--dark);
+    }
+
+    img {
+      max-width: 40px;
+      max-height: 40px;
+    }
+  }
+}

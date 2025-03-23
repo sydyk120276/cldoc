@@ -1,0 +1,12 @@
+include ../../mixins/section-header
+include ../../components/info-card
+include ../../content/features-list
+
+section.features
+  .container.features__container(id="container" class="container")
+    +section-header({title: "Почему выбирают нас"})
+
+    ul.features__list.base-section-list--4cols
+      each item in featuresList
+        li
+          +info-card(item)

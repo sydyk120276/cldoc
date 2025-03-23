@@ -1,0 +1,137 @@
+$laptop-custom: 1140px;
+$tablet-custom: 860px;
+$mobile-custom: 575px;
+
+.footer {
+  padding: 50px 0 30px;
+  border-top: 6px solid var(--accent);
+
+  &__grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 200px auto auto auto;
+    grid-template-rows: auto;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+
+    @include m-b-down($tablet-custom) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 10px;
+    }
+
+    &-item {
+
+      &--logo {
+        @extend .flex-column;
+
+        span {
+          display: inline-block;
+          font-size: 14px;
+          margin-bottom: 20px;
+          color: var(--text);
+        }
+      }
+
+      &--nav {
+        grid-column: 2/5;
+        display: flex;
+        align-items: center;
+
+        @include m-b-down($tablet-custom) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .nav {
+          flex-grow: 1;
+          padding: 0 5px;
+
+          @include m-b-down($laptop-custom) {
+            &__list {
+              margin: 0;
+              margin-left: auto;
+              margin-right: -15px;
+            }
+          }
+
+          @include m-b-down($tablet-custom) {
+            padding: 0;
+            margin-bottom: 30px;
+
+            &__list {
+              margin-left: -10px;
+            }
+
+            &__list-item {
+              margin-bottom: 20px;
+            }
+          }
+
+          @include m-b-down($mobile-custom) {
+            &__list {
+              flex-direction: column;
+            }
+
+            &__list-item:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        .social {
+          @include m-b-down($laptop-custom) {
+            position: absolute;
+            bottom: 10px;
+            left: 30px;
+          }
+
+          @include m-b-laptop-down {
+            left: 30px;
+          }
+
+          @include m-b-down($tablet-custom) {
+            position: static;
+            margin-bottom: 30px;
+          }
+        }
+      }
+
+      &--law {
+        grid-column: 1/4;
+        grid-row: 2/3;
+
+        .company-law-info {
+          font-size: 14px;
+          line-height: 20px;
+          color: var(--info);
+        }
+      }
+
+      &--developer {
+        display: flex;
+        grid-column: 4/5;
+        grid-row: 2/3;
+
+        @include m-b-down($laptop-custom) {
+          grid-column: 1/5;
+          grid-row: 3/4;
+        }
+
+        @include m-b-down($tablet-custom) {
+          padding-top: 30px;
+          margin-top: 25px;
+          border-top: 1px solid var(--accent);
+
+          a {
+            margin: 0;
+          }
+        }
+      }
+
+      @include m-b-down($tablet-custom) {
+        grid-column: initial;
+        grid-row: initial;
+      }
+    }
+  }
+}

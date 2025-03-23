@@ -1,0 +1,19 @@
+.modal-overlay
+  .modal.map-modal#map-modal
+    include ./modal-components/modal-closer
+
+    .map-modal-controls
+      button.map-modal-zoom.map-modal-zoom--in
+      button.map-modal-zoom.map-modal-zoom--out
+
+    .map-modal-tooltip
+      span Россия
+
+    .map-modal-chooser
+      <button class="chooser-closer">
+        <img src="./assets/img/icon-close.svg" alt="Закрыть" width="24" height="24">
+      </button>
+      span
+      a(href="#") Перейти
+
+    include ../components/svg-map

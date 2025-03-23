@@ -1,0 +1,21 @@
+include ../../mixins/section-header
+include ../../components/review-card
+include ../../content/reviews-list
+include ../../content/tabs-list
+
+section.review.slider-section
+  .container
+    +section-header({title: "Отзывы наших клиентов"}, true)
+    .review-tabs
+      button(type="button" data-type='all' tabindex="0").active Все отзывы
+      each item in tabsList
+        button(type="button" data-type= item.type tabindex="0" )!= item.title
+
+    .tabs__content
+      .swiper.review-slider
+        .swiper-wrapper
+          each item in reviewsList
+            .swiper-slide
+              +review-card(item)
+
+        .swiper-pagination

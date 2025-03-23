@@ -1,0 +1,12 @@
+include ../../mixins/section-header
+include ../../components/info-card
+include ../../content/documents-list
+
+section.documents
+  .container.documents__container(id="container" class="container")
+    +section-header({title: "Популярные документы для легализации", text: "Мы легализуем самые разные документы. Наиболее востребованные услуги:"})
+
+    ul.documents__list.base-section-list--3cols
+      each item in documentsList
+        li
+          +info-card(item)

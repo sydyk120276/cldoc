@@ -1,0 +1,14 @@
+.developer-link {
+  display: flex;
+
+  margin-left: auto;
+  margin-top: auto;
+
+  img {
+    width: 180px;
+    height: 60px;
+    object-fit: contain;
+  }
+
+  @extend .hover-opacity;
+}

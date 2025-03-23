@@ -1,0 +1,96 @@
+.info {
+  @extend .section-inner-offset;
+  @extend .section-transition;
+  overflow: visible;
+
+  .section-text {
+    text-align: start;
+  }
+
+  .info-wrapper {
+    position: relative;
+    max-width: 1020px;
+    padding: clamp(20px, 4vw, 50px) clamp(20px, 4vw, 400px)
+      clamp(20px, 4vw, 50px) clamp(20px, 4vw, 50px);
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    margin: 0 auto;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      right: 0;
+      width: 50%;
+      background-image: url(../assets/img/decor_map.png);
+      background-position: right;
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: 1;
+
+      @include m-b-down(543px) {
+        background-position: center;
+        width: 100%;
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: 20px;
+      background-image: url("../assets/img/decor_book.svg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 200px;
+      height: 260px;
+      z-index: 10;
+
+      @include m-b-tablet-lg-down {
+        content: none;
+      }
+    }
+  }
+
+  &__header {
+    position: relative;
+    @extend .flex-column;
+    gap: 20px;
+    z-index: 5;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent);
+
+    @include m-b-mobile-lg-down {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--dark);
+
+    @include m-b-mobile-lg-down {
+      text-align: center;
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 40px;
+    z-index: 5;
+
+    @include m-b-mobile-lg-down {
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.content-block {
+	&__title {
+		@extend .inner-section-title;
+	}
+
+	&__subtitle {
+		@extend .inner-section-accent-title;
+	}
+
+	p {
+		font-size: 16px;
+		max-width: 1140px;
+		margin-bottom: 30px;
+
+		@include m-b-mobile-lg-down {
+			font-size: 16px;
+		}
+	}
+
+	span {
+		font-weight: 400;
+		font-size: 16px;
+		color: var(--dark);
+	}
+
+	& > ul {
+		list-style: revert;
+		margin: revert;
+		padding: revert;
+		margin-bottom: 30px;
+		max-width: var(--inner-section-content-max-width);
+
+		li {
+			position: relative;
+			margin-bottom: 20px;
+		}
+	}
+}
